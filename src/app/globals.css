@@ -576,3 +576,92 @@ textarea:focus {
         transition: none !important;
     }
 }
+
+/* Print Styles for PDF */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Hide elements that shouldn't be in PDF */
+    .no-print,
+    nav,
+    footer,
+    .floating-elements,
+    .golden-particles,
+    .animated-bg {
+        display: none !important;
+    }
+
+    /* Adjust sections for print */
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
+        padding: 15px !important;
+    }
+
+    /* Make sure images fit */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Adjust colors for print */
+    .text-white {
+        color: black !important;
+    }
+
+    .text-gold-400,
+    .text-gold-500 {
+        color: #b45309 !important;
+    }
+
+    .text-gray-300 {
+        color: #4a4a4a !important;
+    }
+
+    /* Background colors */
+    .bg-slate-800,
+    .bg-slate-900 {
+        background: #f8f9fa !important;
+    }
+
+    .glass-effect {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+    }
+
+    /* Adjust spacing */
+    .section-padding {
+        padding: 20px 0 !important;
+    }
+
+    /* Skills bars */
+    .bg-slate-700 {
+        background: #e9ecef !important;
+    }
+
+    .from-gold-400 {
+        background: #b45309 !important;
+    }
+
+    /* Cards */
+    .card-hover {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Hide animations */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

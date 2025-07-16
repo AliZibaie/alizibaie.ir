@@ -4,11 +4,14 @@ import { useState } from 'react'
 import Image from 'next/image'
 import {
     ChevronDownIcon,
+    CircleStackIcon ,
+    CogIcon  ,
     EnvelopeIcon,
     PhoneIcon,
     MapPinIcon,
     CalendarDaysIcon,
     UserIcon,
+    CheckIcon ,
     CodeBracketIcon,
     ServerIcon,
     CpuChipIcon,
@@ -119,7 +122,7 @@ export default function Home() {
                             <a href="#experience" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">تجربه</a>
                             <a href="#skills" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">مهارت‌ها</a>
                             <a href="#education" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">تحصیلات</a>
-                            <a href="#contact" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">تماس</a>
+                            <a href="#contact" className="text-gray-300 hover:text-gold-400 transition-colors duration-200 px-8">تماس</a>
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -151,120 +154,186 @@ export default function Home() {
             </nav>
 
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center px-4 pt-16 animated-bg">
-                <div className="container mx-auto text-center">
-                    <div className="animate-fade-in-up">
+            <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+                <div className="animated-bg absolute inset-0"></div>
+                <div className="floating-elements">
+                    <div className="floating-element"></div>
+                    <div className="floating-element"></div>
+                    <div className="floating-element"></div>
+                    <div className="floating-element"></div>
+                    <div className="floating-element"></div>
+                </div>
+                <div className="golden-particles"></div>
+
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="text-center">
                         <div className="mb-8">
-                            <div className="w-32 h-32 mx-auto mb-6 relative">
-                                <div className="absolute inset-0 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse-gold"></div>
-                                <div className="absolute inset-2 bg-slate-900 rounded-full flex items-center justify-center">
-                                    <UserIcon className="h-16 w-16 text-gold-400" />
+                            <div className="relative inline-block">
+                                <div className="w-48 h-48 md:w-56 md:h-56 mx-auto mb-8 rounded-full overflow-hidden border-4 border-gold-400 shadow-2xl animate-pulse-gold">
+                                    <Image
+                                        src="/images/me.jpg"
+                                        alt="علی زیبایی - Backend Developer"
+                                        width={224}
+                                        height={224}
+                                        className="w-full h-full object-cover"
+                                        priority
+                                    />
+                                </div>
+                                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center border-4 border-slate-900 shadow-lg">
+                                    <CodeBracketIcon className="h-8 w-8 text-white" />
                                 </div>
                             </div>
-                            <h1 className="text-5xl md:text-7xl font-bold mb-4">
-                                <span className="text-shimmer">علی زیبایی</span>
-                            </h1>
-                            <p className="text-xl md:text-2xl text-gray-300 mb-2">Backend Developer</p>
-                            <p className="text-lg text-gold-400 mb-8">متخصص PHP/Laravel</p>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                        <h1 className="heading-1 text-white mb-4 animate-fade-in-up">
+                            <span className="text-shimmer">علی زیبایی</span>
+                        </h1>
+
+                        <div className="text-xl md:text-2xl lg:text-3xl text-gold-400 mb-4 font-semibold animate-fade-in-up">
+                            Junior Backend Developer
+                        </div>
+
+                        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
+                            توسعه‌دهنده Backend با <span className="text-gold-400 font-bold">PHP/Laravel</span> و
+                            <span className="text-gold-400 font-bold"> +13 ماه تجربه کاری</span> در پروژه‌های متنوع.
+                            <br />
+                            علاقه‌مند به <span className="text-gold-400">یادگیری</span> و
+                            <span className="text-gold-400"> بهبود مستمر</span>
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in-up">
                             <a
                                 href="#contact"
-                                className="bg-gold-500 hover:bg-gold-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover-glow"
+                                className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-3 hover-glow"
                             >
+                                <PhoneIcon className="h-5 w-5" />
                                 تماس با من
                             </a>
-                            <a
-                                href="/cv.pdf"
-                                download
-                                className="bg-transparent border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                            <button
+                                onClick={() => window.print()}
+                                className="bg-transparent border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-3"
                             >
                                 <DocumentArrowDownIcon className="h-5 w-5" />
-                                دانلود رزومه
-                            </a>
+                                دانلود رزومه (PDF)
+                            </button>
+                        </div>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto animate-fade-in-up">
+                            <div className="glass-effect rounded-lg p-4 text-center">
+                                <div className="text-2xl font-bold text-gold-400">13+</div>
+                                <div className="text-sm text-gray-300">ماه تجربه</div>
+                            </div>
+                            <div className="glass-effect rounded-lg p-4 text-center">
+                                <div className="text-2xl font-bold text-gold-400">7+</div>
+                                <div className="text-sm text-gray-300">پروژه تکمیل شده</div>
+                            </div>
+                            <div className="glass-effect rounded-lg p-4 text-center">
+                                <div className="text-2xl font-bold text-gold-400">32</div>
+                                <div className="text-sm text-gray-300">ماژول توسعه یافته</div>
+                            </div>
+                            <div className="glass-effect rounded-lg p-4 text-center">
+                                <div className="text-2xl font-bold text-gold-400">400+</div>
+                                <div className="text-sm text-gray-300">ساعت آموزش</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <ChevronDownIcon className="h-8 w-8 text-gold-400" />
-                </div>
             </section>
 
-            {/* About Section */}
-            <section id="about" className="section-padding animated-bg-secondary">
-                <div className="container mx-auto px-4">
-                    <div className="animate-fade-in-up">
-                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gold-400">درباره من</h2>
 
-                        <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* About Section */}
+            {/* About Section - Honest & Professional */}
+            <section id="about" className="section-padding bg-slate-800/50">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <h2 className="heading-2 text-white mb-6">درباره من</h2>
+                            <div className="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto"></div>
+                        </div>
+
+                        <div className="grid lg:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
                                 <div className="glass-effect rounded-2xl p-8 border border-gold-500/20">
-                                    <h3 className="text-2xl font-bold mb-4 text-gold-400">پروفایل شخصی</h3>
-                                    <div className="space-y-3 text-gray-300">
-                                        <div className="flex items-center gap-3">
-                                            <CalendarDaysIcon className="h-5 w-5 text-gold-400" />
-                                            <span>تاریخ تولد: 1380</span>
+                                    <h3 className="text-2xl font-bold text-gold-400 mb-4">Junior Backend Developer</h3>
+                                    <p className="text-gray-300 leading-relaxed mb-6">
+                                        با 13 ماه تجربه کاری در پارک فناوری پردیس، مسیر توسعه backend را با
+                                        <span className="text-gold-400 font-semibold"> PHP/Laravel</span> آغاز کرده‌ام.
+                                        علاقه‌مند به یادگیری تکنولوژی‌های جدید و بهبود مستمر مهارت‌هایم.
+                                    </p>
+
+                                    <div className="grid grid-cols-2 gap-4 mb-6">
+                                        <div className="bg-slate-700/50 rounded-lg p-4">
+                                            <div className="text-gold-400 font-bold text-lg">13+</div>
+                                            <div className="text-sm text-gray-300">ماه تجربه</div>
                                         </div>
-                                        <div className="flex items-center gap-3">
-                                            <UserIcon className="h-5 w-5 text-gold-400" />
-                                            <span>وضعیت تأهل: مجرد</span>
+                                        <div className="bg-slate-700/50 rounded-lg p-4">
+                                            <div className="text-gold-400 font-bold text-lg">Laravel</div>
+                                            <div className="text-sm text-gray-300">تخصص اصلی</div>
                                         </div>
-                                        <div className="flex items-center gap-3">
-                                            <ShieldCheckIcon className="h-5 w-5 text-gold-400" />
-                                            <span>خدمت نظامی: معافیت تحصیلی (تا 2025)</span>
-                                        </div>
-                                        <div className="flex items-center gap-3">
-                                            <MapPinIcon className="h-5 w-5 text-gold-400" />
-                                            <span>محل سکونت: البرز، کرج</span>
-                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-2">
+                                        {['PHP/Laravel', 'MySQL', 'RESTful API', 'Git', 'Clean Code'].map((skill) => (
+                                            <span key={skill} className="bg-gold-500/20 text-gold-400 px-3 py-1 rounded-full text-sm border border-gold-500/30">
+                  {skill}
+                </span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="glass-effect rounded-2xl p-8 border border-gold-500/20">
-                                    <h3 className="text-2xl font-bold mb-4 text-gold-400">تجربه کاری</h3>
+                                    <h3 className="text-2xl font-bold text-gold-400 mb-6">دستاوردها و تجربیات</h3>
                                     <div className="space-y-4">
-                                        <div className="flex items-center gap-3">
-                                            <BuildingOfficeIcon className="h-6 w-6 text-gold-400" />
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-gold-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                                <CheckIcon className="h-4 w-4 text-gold-400" />
+                                            </div>
                                             <div>
-                                                <h4 className="font-semibold text-white">Backend Developer</h4>
-                                                <p className="text-gray-300">پارک فناوری پردیس</p>
-                                                <p className="text-sm text-gold-400">13 ماه تجربه</p>
+                                                <div className="font-semibold text-white">32 ماژول در فن بازار ملی</div>
+                                                <div className="text-gray-300 text-sm">توسعه و تست ماژول‌های مختلف</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-gold-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                                <CheckIcon className="h-4 w-4 text-gold-400" />
+                                            </div>
+                                            <div>
+                                                <div className="font-semibold text-white">یادگیری Clean Architecture</div>
+                                                <div className="text-gray-300 text-sm">اصول Service Pattern و Repository</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-gold-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                                <CheckIcon className="h-4 w-4 text-gold-400" />
+                                            </div>
+                                            <div>
+                                                <div className="font-semibold text-white">تسلط بر Laravel Ecosystem</div>
+                                                <div className="text-gray-300 text-sm">Eloquent, Migrations, Artisan</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-gold-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                                <CheckIcon className="h-4 w-4 text-gold-400" />
+                                            </div>
+                                            <div>
+                                                <div className="font-semibold text-white">مدرک تخصصی Laravel</div>
+                                                <div className="text-gray-300 text-sm">مکتب شریف - 400+ ساعت</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="glass-effect rounded-2xl p-8 border border-gold-500/20">
-                                    <h3 className="text-2xl font-bold mb-4 text-gold-400">مهارت‌های کلیدی</h3>
-                                    <div className="space-y-2 text-gray-300">
-                                        <div className="flex items-center gap-2">
-                                            <RocketLaunchIcon className="h-4 w-4 text-gold-400" />
-                                            <span>Performance Optimization</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <CubeIcon className="h-4 w-4 text-gold-400" />
-                                            <span>Modular Architecture</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <WrenchScrewdriverIcon className="h-4 w-4 text-gold-400" />
-                                            <span>Clean Architecture</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <CheckCircleIcon className="h-4 w-4 text-gold-400" />
-                                            <span>Code Quality & SOLID</span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
 
             {/* Experience Section */}
             <section id="experience" className="section-padding bg-slate-800/50">
@@ -303,47 +372,185 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Skills Section */}
-            <section id="skills" className="section-padding animated-bg-secondary">
+            {/* Skills Section - Junior Level */}
+            <section id="skills" className="section-padding bg-slate-800/50">
                 <div className="container mx-auto px-4">
-                    <div className="animate-fade-in-up">
-                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gold-400">مهارت‌های فنی</h2>
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <h2 className="heading-2 text-white mb-6">مهارت‌ها</h2>
+                            <div className="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto"></div>
+                        </div>
 
-                        <div className="grid gap-8">
-                            {Object.entries(skills).map(([category, skillList], index) => (
-                                <div
-                                    key={index}
-                                    className="glass-effect rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300"
-                                >
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
-                                            {category === 'PHP Core' && <CodeBracketIcon className="h-6 w-6 text-gold-400" />}
-                                            {category === 'Laravel Ecosystem' && <ServerIcon className="h-6 w-6 text-gold-400" />}
-                                            {category === 'Database' && <ServerIcon  className="h-6 w-6 text-gold-400" />}
-                                            {category === 'Design Patterns' && <CpuChipIcon className="h-6 w-6 text-gold-400" />}
-                                            {category === 'Tools & Others' && <CommandLineIcon className="h-6 w-6 text-gold-400" />}
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-white">{category}</h3>
+                        <div className="grid lg:grid-cols-3 gap-8">
+                            {/* Backend Skills */}
+                            <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 card-hover">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center">
+                                        <ServerIcon className="h-8 w-8 text-white" />
                                     </div>
-
-                                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                                        {skillList.map((skill, skillIndex) => (
-                                            <div
-                                                key={skillIndex}
-                                                className="flex items-center gap-2 p-3 bg-slate-800/50 rounded-lg border border-gold-500/10 hover:border-gold-500/30 transition-all duration-200"
-                                            >
-                                                <StarIcon className="h-4 w-4 text-gold-400" />
-                                                <span className="text-gray-300">{skill}</span>
-                                            </div>
-                                        ))}
+                                    <div>
+                                        <h3 className="text-xl font-bold text-gold-400">Backend</h3>
+                                        <p className="text-gray-300 text-sm">تخصص اصلی</p>
                                     </div>
                                 </div>
-                            ))}
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">PHP</span>
+                                            <span className="text-gold-400 text-sm">Good</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-gold-400 to-gold-600 h-2 rounded-full" style={{width: '75%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Laravel</span>
+                                            <span className="text-gold-400 text-sm">Good</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-gold-400 to-gold-600 h-2 rounded-full" style={{width: '80%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">RESTful API</span>
+                                            <span className="text-gold-400 text-sm">Intermediate</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-gold-400 to-gold-600 h-2 rounded-full" style={{width: '70%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">OOP</span>
+                                            <span className="text-gold-400 text-sm">Intermediate</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-gold-400 to-gold-600 h-2 rounded-full" style={{width: '65%'}}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Database */}
+                            <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 card-hover">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                                        <CircleStackIcon className="h-8 w-8 text-white" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-blue-400">Database</h3>
+                                        <p className="text-gray-300 text-sm">پایگاه داده</p>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">MySQL</span>
+                                            <span className="text-blue-400 text-sm">Good</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style={{width: '75%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Eloquent ORM</span>
+                                            <span className="text-blue-400 text-sm">Good</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style={{width: '80%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Database Design</span>
+                                            <span className="text-blue-400 text-sm">Intermediate</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style={{width: '65%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Query Optimization</span>
+                                            <span className="text-blue-400 text-sm">Beginner</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style={{width: '50%'}}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Tools & Others */}
+                            <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 card-hover">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                                        <CogIcon className="h-8 w-8 text-white" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-green-400">Tools & Others</h3>
+                                        <p className="text-gray-300 text-sm">ابزارها</p>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Git</span>
+                                            <span className="text-green-400 text-sm">Good</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style={{width: '75%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Postman</span>
+                                            <span className="text-green-400 text-sm">Good</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style={{width: '80%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Docker</span>
+                                            <span className="text-green-400 text-sm">Beginner</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style={{width: '40%'}}></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-white font-semibold">Linux</span>
+                                            <span className="text-green-400 text-sm">Beginner</span>
+                                        </div>
+                                        <div className="w-full bg-slate-700 rounded-full h-2">
+                                            <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style={{width: '45%'}}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
 
             {/* Education Section */}
             <section id="education" className="section-padding bg-slate-800/50">
@@ -527,7 +734,7 @@ export default function Home() {
                             </a>
                             <a
                                 href="mailto:alizibaie1380@gmail.com"
-                                className="text-gray-400 hover:text-gold-400 transition-colors duration-200"
+                                className="text-gray-400 hover:text-gold-400 transition-colors duration-200 px-6"
                             >
                                 Email
                             </a>
