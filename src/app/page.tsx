@@ -693,14 +693,32 @@ export default function Home() {
 
                                 <div className="glass-effect rounded-2xl p-8 border border-gold-500/20">
                                     <h3 className="text-2xl font-bold mb-6 text-gold-400">دانلود رزومه</h3>
-                                    <a
-                                        href="/cv.pdf"
-                                        download
-                                        className="w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                                    <button
+                                        onClick={() => {
+                                            // اول چک کنیم فایل PDF موجوده یا نه
+                                            fetch('/cv.pdf')
+                                                .then(response => {
+                                                    if (response.ok) {
+                                                        // اگه فایل PDF موجود باشه، دانلود کنه
+                                                        const link = document.createElement('a');
+                                                        link.href = '/cv.pdf';
+                                                        link.download = 'ali-zibaei-resume.pdf';
+                                                        link.click();
+                                                    } else {
+                                                        // اگه فایل PDF نباشه، پرینت کنه
+                                                        window.print();
+                                                    }
+                                                })
+                                                .catch(() => {
+                                                    // در صورت خطا، پرینت کنه
+                                                    window.print();
+                                                });
+                                        }}
+                                        className="bg-transparent border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-3"
                                     >
-                                        <DocumentArrowDownIcon className="h-6 w-6" />
-                                        دانلود رزومه PDF
-                                    </a>
+                                        <DocumentArrowDownIcon className="h-5 w-5" />
+                                        دانلود رزومه (PDF)
+                                    </button>
                                 </div>
                             </div>
                         </div>
