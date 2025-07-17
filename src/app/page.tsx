@@ -574,7 +574,7 @@ export default function Home() {
                                         <span className="text-gold-400">دوره تحصیل:</span> 2020-2025
                                     </p>
                                     <p className="mb-2">
-                                        <span className="text-gold-400">وضعیت:</span> در حال تحصیل
+                                        <span className="text-gold-400">وضعیت:</span>تمام شده
                                     </p>
                                 </div>
                             </div>
