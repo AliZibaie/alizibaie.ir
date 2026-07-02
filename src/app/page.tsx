@@ -899,32 +899,6 @@ export default function Home() {
                                         </a>
                                     </div>
                                 </div>
-
-                                <div className="glass-effect rounded-2xl p-8 border border-gold-500/20">
-                                    <h3 className="text-2xl font-bold mb-6 text-gold-400">Download Resume</h3>
-                                    <button
-                                        onClick={() => {
-                                            fetch('/cv.pdf')
-                                                .then(response => {
-                                                    if (response.ok) {
-                                                        const link = document.createElement('a');
-                                                        link.href = '/cv.pdf';
-                                                        link.download = 'ali-zibaei-resume.pdf';
-                                                        link.click();
-                                                    } else {
-                                                        window.print();
-                                                    }
-                                                })
-                                                .catch(() => {
-                                                    window.print();
-                                                });
-                                        }}
-                                        className="bg-transparent border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-3"
-                                    >
-                                        <DocumentArrowDownIcon className="h-5 w-5" />
-                                        Download Resume (PDF)
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
