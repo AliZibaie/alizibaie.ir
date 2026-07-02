@@ -63,34 +63,35 @@ export default function Home() {
         ],
         'AI & Machine Learning': [
             'Supervised & Unsupervised Learning',
-            'Fine-tuning Pre-trained Models',
-            'Neural Networks: CNN, RNN, LSTM, GRU',
-            'Object Detection (YOLO)',
-            'Statistical Analysis (t-test, ANOVA, Chi-square)',
-            'Data Preprocessing & Feature Engineering',
-            'Model Evaluation (Confusion Matrix, ROC-AUC)',
-            'Python (NumPy, Pandas, Scikit-learn, TensorFlow)'
+            'Fine-tuning Pre-trained Models (SAM3, YOLO, ResNet)',
+            'Deep Neural Networks: MLP, CNN, RNN, LSTM, GRU',
+            'Unsupervised & Classical Algorithms: SOM, K-Means, Gaussian Mixture Models, EM Clustering',
+            'Statistical Analysis (t-test, ANOVA, Chi-square, Mann-Whitney U, Kruskal-Wallis, Wilcoxon, Friedman, Iman-Davenport, McNemar)',
+            'Data Preprocessing (Normalization, Standardization, PCA, t-SNE, LDA, Feature Selection, Encoding, Missing Value Imputation, Outlier Detection, Handling Imbalanced Data, Data Augmentation)',
+            'Model Evaluation (Confusion Matrix, ROC-AUC, Precision-Recall, F1-Score, Sensitivity, Specificity, Accuracy, Kappa, Log Loss)',
+            'Machine Learning Algorithms: SVM, KNN, Ensemble Learning (Random Forest, Gradient Boosting, AdaBoost, XGBoost, Stacking, Bagging)',
+            'Python Ecosystem: NumPy, Pandas, Scikit-learn, TensorFlow, Statsmodels, SciPy, Matplotlib, Seaborn, Imbalanced-learn, XGBoost, LightGBM, CatBoost'
         ]
     }
 
     const experiences = [
         {
-            title: 'Acceleration System',
+            title: 'Acceleration',
             description: 'Platform for managing accelerators and startups',
             technologies: ['Laravel', 'MySQL', 'Redis', 'API Development']
         },
         {
-            title: 'Admission System',
+            title: 'membership',
             description: 'Managing membership requests and admission process',
             technologies: ['Laravel', 'Queue System', 'Validation', 'Authentication']
         },
         {
-            title: 'My Company System',
+            title: 'My Company(MyCo) System',
             description: 'Tax exemption platform and company management',
             technologies: ['Laravel', 'Complex Queries', 'Performance Optimization']
         },
         {
-            title: 'National Tech Market System',
+            title: 'Fanbazar Meli',
             description: '32 different modules with shared codebase',
             technologies: ['Modular Architecture', 'Clean Code', 'SOLID Principles']
         },
@@ -100,7 +101,7 @@ export default function Home() {
             technologies: ['API Integration', 'Middleware', 'Error Handling']
         },
         {
-            title: 'Secretariat Project',
+            title: 'DabirKhane',
             description: 'Performance improvement, debugging, and new feature development',
             technologies: ['Performance Tuning', 'Debugging', 'Code Refactoring']
         }
@@ -227,13 +228,6 @@ export default function Home() {
                                     <PhoneIcon className="h-5 w-5" />
                                     Contact Me
                                 </a>
-                                <button
-                                    onClick={() => window.print()}
-                                    className="bg-transparent border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-3"
-                                >
-                                    <DocumentArrowDownIcon className="h-5 w-5" />
-                                    Download Resume (PDF)
-                                </button>
                             </div>
                         </div>
 
@@ -582,7 +576,7 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            {/* AI & Machine Learning Card - New */}
+                            {/* Enhanced AI & Machine Learning Card */}
                             <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 card-hover col-span-1 lg:col-span-3">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
@@ -594,12 +588,130 @@ export default function Home() {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-wrap gap-2">
-                                    {skills['AI & Machine Learning'].map((skill, idx) => (
-                                        <span key={idx} className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">
-                                            {skill}
-                                        </span>
-                                    ))}
+                                {/* Detailed categories */}
+                                <div className="space-y-6">
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Learning Paradigms</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Supervised Learning</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Unsupervised Learning</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Statistical Analysis</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">t‑test</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">ANOVA</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Chi‑square</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Mann‑Whitney U</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Kruskal‑Wallis</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Wilcoxon</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Friedman</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Iman‑Davenport</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">McNemar</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Deep Neural Networks</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">MLP</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">CNN</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">RNN</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">LSTM</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">GRU</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Unsupervised &amp; Classical Algorithms</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">SOM</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">K‑Means</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Gaussian Mixture Models</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">EM Clustering</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Machine Learning Algorithms</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">SVM</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">KNN</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Random Forest</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Gradient Boosting</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">AdaBoost</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">XGBoost</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Stacking</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Bagging</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Dimensionality Reduction</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">PCA</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">t‑SNE</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">LDA</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Fine‑tuning &amp; Pre‑trained Models</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">SAM3</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">YOLO</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">ResNet</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Data Preprocessing</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Normalization</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Standardization</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Feature Selection</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Encoding</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Missing Value Imputation</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Outlier Detection</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Handling Imbalanced Data</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Data Augmentation</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Model Evaluation</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Confusion Matrix</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">ROC‑AUC</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Precision‑Recall</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">F1‑Score</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Sensitivity</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Specificity</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Accuracy</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Kappa</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Log Loss</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-md font-semibold text-purple-300 mb-2">Python Ecosystem</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">NumPy</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Pandas</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Scikit‑learn</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">TensorFlow</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Statsmodels</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">SciPy</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Matplotlib</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Seaborn</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">Imbalanced‑learn</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">XGBoost</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">LightGBM</span>
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">CatBoost</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
