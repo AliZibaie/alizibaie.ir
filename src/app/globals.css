@@ -18,11 +18,10 @@
     --color-primary-600: oklch(0.50 0.25 220);
 }
 
-/* Import Fonts */
 @font-face {
     font-family: 'Vazir';
-    src: url('/fonts/vazir.woff2') format('woff2'),
-    url('/fonts/vazir.woff') format('woff');
+    src: url('/public/fonts/Vazir.woff2') format('woff2'),
+    url('/public/fonts/Vazir.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -43,8 +42,8 @@
 
 body {
     font-family: var(--font-vazir);
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
+    text-align: left;
     background: #0f172a;
     color: #ffffff;
 }
@@ -89,7 +88,6 @@ body {
     @apply bg-slate-800/50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-slate-700;
 }
 
-/* Enhanced animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -139,7 +137,6 @@ body {
     }
 }
 
-/* Hover effects */
 .hover-glow {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -149,25 +146,21 @@ body {
     transform: translateY(-2px);
 }
 
-/* Loading shimmer effect */
 .shimmer {
     background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.1), transparent);
     background-size: 200px 100%;
     animation: shimmer 2s infinite;
 }
 
-/* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
 }
 
-/* Performance optimizations */
 .gpu-accelerated {
     transform: translateZ(0);
     will-change: transform;
 }
 
-/* Enhanced card hover */
 .card-enhanced {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -177,7 +170,6 @@ html {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
 
-/* Background Animations */
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -237,7 +229,6 @@ html {
     }
 }
 
-/* Animated Background */
 .animated-bg {
     background: linear-gradient(-45deg,
     rgba(30, 41, 59, 0.8),
@@ -260,7 +251,6 @@ html {
     animation: gradientShift 20s ease infinite;
 }
 
-/* Floating Elements */
 .floating-elements {
     position: absolute;
     width: 100%;
@@ -324,7 +314,6 @@ html {
     animation-duration: 6s;
 }
 
-/* Golden Particles */
 .golden-particles {
     position: absolute;
     width: 100%;
@@ -356,7 +345,6 @@ html {
     animation-delay: 1.5s;
 }
 
-/* Text Shimmer Effect */
 .text-shimmer {
     background: linear-gradient(
             90deg,
@@ -373,7 +361,6 @@ html {
     animation: shimmer 3s linear infinite;
 }
 
-/* Card Hover Effects */
 .card-hover {
     transition: all 0.3s ease;
 }
@@ -383,14 +370,12 @@ html {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Glass Effect */
 .glass-effect {
     background: rgba(30, 41, 59, 0.3);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(251, 191, 36, 0.1);
 }
 
-/* Pulse Gold Animation */
 @keyframes pulseGold {
     0%, 100% {
         opacity: 1;
@@ -406,12 +391,10 @@ html {
     animation: pulseGold 2s ease-in-out infinite;
 }
 
-/* Fade In Up Animation */
 .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out;
 }
 
-/* Enhanced Scrollbar - مطابق با تم طلایی سایت */
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
@@ -456,13 +439,11 @@ html {
     );
 }
 
-/* Firefox Scrollbar */
 * {
     scrollbar-width: thin;
     scrollbar-color: oklch(0.70 0.25 85) #334155;
 }
 
-/* Text Selection - مطابق با تم طلایی */
 ::selection {
     background: oklch(0.70 0.25 85);
     color: #1e293b;
@@ -475,7 +456,6 @@ html {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Animations */
 @media (prefers-reduced-motion: reduce) {
     .animated-bg,
     .animated-bg-secondary,
@@ -489,7 +469,6 @@ html {
     }
 }
 
-/* Mobile Optimizations */
 @media (max-width: 768px) {
     .floating-element {
         animation-duration: 4s;
@@ -519,7 +498,6 @@ html {
     }
 }
 
-/* Loading States */
 .loading-shimmer {
     background: linear-gradient(
             90deg,
@@ -531,7 +509,6 @@ html {
     animation: shimmer 2s infinite;
 }
 
-/* Focus States */
 button:focus,
 a:focus,
 input:focus,
@@ -540,7 +517,6 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* High Contrast Mode */
 @media (prefers-contrast: high) {
     .glass-effect {
         background: rgba(30, 41, 59, 0.8);
@@ -556,7 +532,6 @@ textarea:focus {
     }
 }
 
-/* Print Styles */
 @media print {
     .animated-bg,
     .animated-bg-secondary,
@@ -577,7 +552,6 @@ textarea:focus {
     }
 }
 
-/* Print Styles for PDF */
 @media print {
     * {
         -webkit-print-color-adjust: exact !important;
@@ -591,7 +565,6 @@ textarea:focus {
         line-height: 1.4 !important;
     }
 
-    /* Hide elements that shouldn't be in PDF */
     .no-print,
     nav,
     footer,
@@ -601,20 +574,17 @@ textarea:focus {
         display: none !important;
     }
 
-    /* Adjust sections for print */
     section {
         page-break-inside: avoid;
         margin-bottom: 20px !important;
         padding: 15px !important;
     }
 
-    /* Make sure images fit */
     img {
         max-width: 100% !important;
         height: auto !important;
     }
 
-    /* Adjust colors for print */
     .text-white {
         color: black !important;
     }
@@ -628,7 +598,6 @@ textarea:focus {
         color: #4a4a4a !important;
     }
 
-    /* Background colors */
     .bg-slate-800,
     .bg-slate-900 {
         background: #f8f9fa !important;
@@ -640,12 +609,10 @@ textarea:focus {
         box-shadow: none !important;
     }
 
-    /* Adjust spacing */
     .section-padding {
         padding: 20px 0 !important;
     }
 
-    /* Skills bars */
     .bg-slate-700 {
         background: #e9ecef !important;
     }
@@ -654,12 +621,10 @@ textarea:focus {
         background: #b45309 !important;
     }
 
-    /* Cards */
     .card-hover {
         box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
     }
 
-    /* Hide animations */
     * {
         animation: none !important;
         transition: none !important;
