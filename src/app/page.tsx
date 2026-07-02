@@ -96,6 +96,33 @@ export default function Home() {
         }
     ]
 
+    const projects = [
+        {
+            title: 'Snapfood',
+            description: 'نمونه‌کار برای Laravel/PHP',
+            technologies: ['Laravel', 'PHP'],
+            link: 'https://github.com/AliZibaie/snapfood'
+        },
+        {
+            title: 'Refrigeration Cycles Calculator',
+            description: 'وب‌اپلیکیشن Django برای محاسبه چرخه‌های تبرید و تحلیل COP',
+            technologies: ['Django', 'Python'],
+            link: 'https://github.com/AliZibaie/refrigeration'
+        },
+        {
+            title: 'DesignPardaz',
+            description: 'استارتر تمپلیت وب با 4 پنل مدیریتی و درگاه پرداخت',
+            technologies: ['Django', 'Next.js', 'MySQL'],
+            link: 'https://github.com/AliZibaie/dp-starter'
+        },
+        {
+            title: 'Air Pollution Forecasting',
+            description: 'پیش‌بینی آلودگی هوا با مدل‌های LSTM و GRU',
+            technologies: ['Deep Learning', 'TensorFlow', 'Python'],
+            link: 'https://github.com/AliZibaie/ADV_AI_project'
+        }
+    ]
+
     return (
         <div className="min-h-screen bg-slate-900 text-white">
             {/* Animated Background Elements */}
@@ -121,7 +148,9 @@ export default function Home() {
                             <a href="#about" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">درباره من</a>
                             <a href="#experience" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">تجربه</a>
                             <a href="#skills" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">مهارت‌ها</a>
+                            <a href="#projects" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">پروژه‌ها</a>
                             <a href="#education" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">تحصیلات</a>
+                            <a href="#certificates" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">مدارک</a>
                             <a href="#contact" className="text-gray-300 hover:text-gold-400 transition-colors duration-200 px-8">تماس</a>
                         </div>
 
@@ -145,7 +174,9 @@ export default function Home() {
                                 <a href="#about" className="text-gray-300 hover:text-gold-400 transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>درباره من</a>
                                 <a href="#experience" className="text-gray-300 hover:text-gold-400 transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>تجربه</a>
                                 <a href="#skills" className="text-gray-300 hover:text-gold-400 transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>مهارت‌ها</a>
+                                <a href="#projects" className="text-gray-300 hover:text-gold-400 transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>پروژه‌ها</a>
                                 <a href="#education" className="text-gray-300 hover:text-gold-400 transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>تحصیلات</a>
+                                <a href="#certificates" className="text-gray-300 hover:text-gold-400 transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>مدارک</a>
                                 <a href="#contact" className="text-gray-300 hover:text-gold-400 transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>تماس</a>
                             </div>
                         </div>
@@ -190,7 +221,7 @@ export default function Home() {
                         </h1>
 
                         <div className="text-xl md:text-2xl lg:text-3xl text-gold-400 mb-4 font-semibold animate-fade-in-up">
-                            Junior Backend Developer
+                            کارآموز هوش مصنوعی
                         </div>
 
                         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
@@ -255,7 +286,7 @@ export default function Home() {
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
                                 <div className="glass-effect rounded-2xl p-8 border border-gold-500/20">
-                                    <h3 className="text-2xl font-bold text-gold-400 mb-4">Junior Backend Developer</h3>
+                                    <h3 className="text-2xl font-bold text-gold-400 mb-4">کارآموز هوش مصنوعی</h3>
                                     <p className="text-gray-300 leading-relaxed mb-6">
                                         با 13 ماه تجربه کاری در پارک فناوری پردیس، مسیر توسعه backend را با
                                         <span className="text-gold-400 font-semibold"> PHP/Laravel</span> آغاز کرده‌ام.
@@ -340,6 +371,13 @@ export default function Home() {
                 <div className="container mx-auto px-4">
                     <div className="animate-fade-in-up">
                         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gold-400">تجربه کاری</h2>
+
+                        <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 mb-12 max-w-4xl mx-auto text-center">
+                            <h3 className="text-2xl font-bold text-white mb-2">Backend Developer</h3>
+                            <p className="text-gray-300">
+                                <span className="text-gold-400">پارک فناوری پردیس</span> — <span className="text-gold-400">13 ماه</span> سابقه کاری
+                            </p>
+                        </div>
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {experiences.map((experience, index) => (
@@ -551,6 +589,50 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Projects Section */}
+            <section id="projects" className="section-padding bg-slate-800/50">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <h2 className="heading-2 text-white mb-6">پروژه‌ها</h2>
+                            <div className="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto"></div>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {projects.map((project, index) => (
+                                <a
+                                    key={index}
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="glass-effect rounded-2xl p-6 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 hover:scale-105 card-hover block"
+                                >
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
+                                            <CodeBracketIcon className="h-6 w-6 text-gold-400" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                                    </div>
+
+                                    <p className="text-gray-300 mb-4">{project.description}</p>
+
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.technologies.map((tech, techIndex) => (
+                                            <span
+                                                key={techIndex}
+                                                className="px-3 py-1 bg-gold-500/20 text-gold-400 rounded-full text-sm border border-gold-500/30"
+                                            >
+                        {tech}
+                      </span>
+                                        ))}
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             {/* Education Section */}
             <section id="education" className="section-padding bg-slate-800/50">
@@ -582,6 +664,37 @@ export default function Home() {
                             <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
+                                        <AcademicCapIcon className="h-6 w-6 text-gold-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white">کارشناسی ارشد مهندسی مکانیک</h3>
+                                        <p className="text-gray-300">دانشگاه خواجه نصیرالدین طوسی</p>
+                                    </div>
+                                </div>
+                                <div className="text-gray-300">
+                                    <p className="mb-2">
+                                        <span className="text-gold-400">گرایش:</span> طراحی کاربردی
+                                    </p>
+                                    <p className="mb-2">
+                                        <span className="text-gold-400">گروه آموزشی:</span> دینامیک، ارتعاشات و کنترل
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Certificates Section */}
+            <section id="certificates" className="section-padding bg-slate-800/50">
+                <div className="container mx-auto px-4">
+                    <div className="animate-fade-in-up">
+                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gold-400">مدارک</h2>
+
+                        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
                                         <BookOpenIcon className="h-6 w-6 text-gold-400" />
                                     </div>
                                     <div>
@@ -605,6 +718,89 @@ export default function Home() {
                                     <EyeIcon className="h-5 w-5" />
                                     مشاهده مدرک
                                 </button>
+                            </div>
+
+                            <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
+                                        <AcademicCapIcon className="h-6 w-6 text-gold-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white">Supervised Machine Learning</h3>
+                                        <p className="text-gray-300">DeepLearning.AI & Stanford University - Coursera</p>
+                                    </div>
+                                </div>
+                                <div className="text-gray-300 mb-6">
+                                    <p className="mb-2">
+                                        <span className="text-gold-400">تاریخ:</span> Mar 16, 2025
+                                    </p>
+                                </div>
+                                <a
+                                    href="https://coursera.org/verify/J12WOOJE8W9T"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full bg-gold-500 hover:bg-gold-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                                >
+                                    <EyeIcon className="h-5 w-5" />
+                                    مشاهده مدرک
+                                </a>
+                            </div>
+
+                            <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
+                                        <AcademicCapIcon className="h-6 w-6 text-gold-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white">Algorithms: Divide and Conquer, Sorting, Searching & Randomized Algorithms</h3>
+                                        <p className="text-gray-300">Stanford University - Coursera</p>
+                                    </div>
+                                </div>
+                                <div className="text-gray-300 mb-6">
+                                    <p className="mb-2">
+                                        <span className="text-gold-400">تاریخ:</span> Apr 2, 2025
+                                    </p>
+                                </div>
+                                <a
+                                    href="https://coursera.org/verify/9K7Q2QXR2XM7"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full bg-gold-500 hover:bg-gold-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                                >
+                                    <EyeIcon className="h-5 w-5" />
+                                    مشاهده مدرک
+                                </a>
+                            </div>
+
+                            <div className="glass-effect rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
+                                        <AcademicCapIcon className="h-6 w-6 text-gold-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white">Machine Learning with Python</h3>
+                                        <p className="text-gray-300">freeCodeCamp</p>
+                                    </div>
+                                </div>
+                                <div className="text-gray-300 mb-6">
+                                    <a
+                                        href="https://github.com/AliZibaie/freeCodeCamp-Machine-Learning-with-Python-Projects"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-gold-400 hover:underline"
+                                    >
+                                        مشاهده پروژه‌ها در GitHub
+                                    </a>
+                                </div>
+                                <a
+                                    href="https://www.freecodecamp.org/certification/alizibaie/machine-learning-with-python-v7"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full bg-gold-500 hover:bg-gold-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                                >
+                                    <EyeIcon className="h-5 w-5" />
+                                    مشاهده مدرک
+                                </a>
                             </div>
                         </div>
                     </div>
