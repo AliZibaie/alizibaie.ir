@@ -233,13 +233,13 @@ export default function Home() {
 
                         <div className="flex-1 flex justify-center md:justify-end order-1 md:order-2">
                             <div className="relative inline-block">
-                                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gold-400 shadow-2xl animate-pulse-gold">
+                                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gold-400 shadow-2xl animate-pulse-gold">
                                     <Image
-                                        src="/images/me.jpg"
+                                        src="/images/me.png"
                                         alt="Ali Zibaie - Backend Developer"
                                         width={224}
                                         height={224}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-contain"
                                         priority
                                     />
                                 </div>
