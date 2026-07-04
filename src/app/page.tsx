@@ -131,7 +131,13 @@ export default function Home() {
             description: 'Air pollution forecasting using LSTM and GRU models',
             technologies: ['Deep Learning', 'TensorFlow', 'Python'],
             link: 'https://github.com/AliZibaie/ADV_AI_project'
-        }
+        },
+            {
+        title: 'Fruit Vision',
+        description: 'A practice project for classifying fresh and rotten fruit images (apples, bananas, oranges) using the YOLO26n-cls model from Ultralytics. Distinguishes between 6 classes: freshapples, freshbanana, freshoranges, rottenapples, rottenbanana, rottenoranges.',
+        technologies: ['YOLO', 'Ultralytics', 'Python', 'PyTorch', 'Deep Learning'],
+        link: 'https://github.com/AliZibaie/Fruit-Vision'
+    }
     ]
 
     return (
